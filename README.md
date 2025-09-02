@@ -26,21 +26,21 @@ Além disso, pode gerar imagens com Stable Diffusion e brincar com comandos simp
 ollama pull llama2:13b
 ```
 
-Instalação
+## Instalação
 
-Clone o repositório:
+- Clone o repositório:
 
     git clone https://github.com/seu-usuario/megan-bot.git
     cd megan-bot
     
-Instale as dependências:
+- Instale as dependências:
     ```
     npm install
     ```
     
-Configuração
+## Configuração
 
-Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+ - Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
     ```
     DISCORD_TOKEN=SEU_TOKEN_DO_DISCORD
@@ -50,18 +50,21 @@ Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
     STABLE_DIFFUSION_URL=http://127.0.0.1:7860
     ```
 
-Como Rodar
+## Como Rodar
 
-Inicie o servidor do Ollama:
+ - Inicie o servidor do Ollama:
     ```
     npm install
     ```
 
-Inicie o Stable Diffusion:
-
+ - Inicie o Stable Diffusion:
+    ```
     python launch.py
-
-Inicie o bot:
+    ```
     
+ - Inicie o bot:
+    ```
     node index.js
-Agora Megan estará online no seu servidor Discord.
+    ```
+    
+## Agora Megan estará online no seu servidor Discord.
