@@ -1,5 +1,5 @@
-negativePrompt = "lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature";
-positivePrompt = "masterpiece, best quality, 8k, highres, detailed, intricate details, sharp focus, illustration, artstation, concept art, smooth, sharp, professional lighting, cinematic lighting";
+negativePrompt = "lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature, letters, log, ai-generated, ai-assisted, stable diffusion, nai diffusion, worst quality, worst aesthetic, bad quality, normal quality, average quality, oldest, old, early, very displeasing, displeasing, adversarial noise, unknown artist, banned artist, what, off-topic, artist request, text, artist name, signature, username, logo, watermark, copyright name, copyright symbol, resized, downscaled, source larger, low quality, lowres, jpeg artifacts, compression artifacts, blurry, artistic error, bad anatomy, bad hands, bad feet, disfigured, deformed, extra digits, fewer digits, missing fingers, censored, bar censor, mosaic censoring, missing, extra, fewer, bad, hyper, error, ugly, worst, tagme, unfinished, bad proportions, bad perspective, aliasing, unclear, photo, icon, multiple views, sequence, comic, 2koma, 4koma, multiple images, turnaround, collage, panel skew, speech bubble, lossy-lossless, scan artifacts, out of frame, cropped, abstract, child";
+positivePrompt = "masterpiece, best quality, good quality, very aesthetic, absurdres, newest, very awa, highres";
 const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const axios = require('axios');
 const fs = require('fs');
@@ -20,14 +20,24 @@ module.exports = {
         promptFinal = positivePrompt + ', ' + prompt;
         await interaction.deferReply();
         try {
+            ADETAILER_ARGS = [
+                { "ad_model": "hand_yolov8n.pt" }
+            ]
             // Faz a requisição para o Stable Diffusion
             const response = await axios.post(`${STABLE_DIFFUSION_URL}/sdapi/v1/txt2img`, {
                 prompt: promptFinal,
                 negative_prompt: negativePrompt,
                 steps: 35,
                 sampler_name: "Euler a",
+                cfg_scale: 5,
                 width: 1024,
-                height: 1024
+                height: 1024,
+                alwayson_scripts: {
+                    ADetailer: {
+                        args: ADETAILER_ARGS,
+                        sampler_name: "Euler a"
+                    }
+                }
             });
 
             const imageBase64 = response.data.images[0];
@@ -43,9 +53,9 @@ module.exports = {
             console.error(error);
             await interaction.editReply('Não estou afim agora.');
         }
-        
+
     }
 
-    
+
 
 }

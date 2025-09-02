@@ -117,4 +117,34 @@ client.on('messageCreate', async (message) => {
         }
     }
 
+    if (content.includes('macaco')) {
+        try {
+            // Reage à mensagem
+            await message.react('🐒');
+        } catch (err) {
+            console.error('Erro ao reagir à mensagem:', err);
+        }
+    }
+});
+
+// Listener de reações
+client.on('messageReactionAdd', async (reaction, user) => {
+    try {
+        if (reaction.partial) await reaction.fetch();
+        if (reaction.message.partial) await reaction.message.fetch();
+
+        if (!reaction.message.author || reaction.message.author.id !== client.user.id) return;
+
+        if (reaction.emoji.name === '❤️' && reaction.count === 2) {
+            await reaction.message.reply(`Não é como se eu gostasse de atenção ou algo assim...`);
+        } 
+        else if (reaction.emoji.name === '🔥' && reaction.count === 2) {
+            await reaction.message.reply(`Pai tá quente!`);
+        } 
+        else if (reaction.emoji.name === '👎' && reaction.count === 2) {
+            await reaction.message.reply(`Vocês não gostam de mim, né? Tudo bem, eu também não gosto de vocês.`);
+        }
+    } catch (error) {
+        console.error('Erro ao processar reação:', error);
+    }
 });
