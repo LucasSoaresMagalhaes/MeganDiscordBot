@@ -22,28 +22,27 @@ Além disso, pode gerar imagens com Stable Diffusion e brincar com comandos simp
 - [Discord Developer Portal](https://discord.com/developers/applications) para criar o bot e pegar o TOKEN  
 - [Ollama](https://ollama.ai/) instalado e rodando localmente  
 - Um modelo do Ollama (exemplo: `llama2:13b`):
-```bash
+```
 ollama pull llama2:13b
 ```
 
 Instalação
 
-    Clone o repositório:
+Clone o repositório:
 
-    ```bash
     git clone https://github.com/seu-usuario/megan-bot.git
     cd megan-bot
+    
+Instale as dependências:
     ```
-
-    Instale as dependências:
-    ```bash
     npm install
     ```
-    Configuração
+    
+Configuração
 
-    Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-    ```bash
+    ```
     DISCORD_TOKEN=SEU_TOKEN_DO_DISCORD
     CLIENT_ID=SEU_CLIENT_ID
     GUILD_ID=SEU_GUILD_ID
@@ -53,20 +52,16 @@ Instalação
 
 Como Rodar
 
-    Inicie o servidor do Ollama:
-    ```bash
+Inicie o servidor do Ollama:
+    ```
     npm install
     ```
 
-    Inicie o Stable Diffusion:
+Inicie o Stable Diffusion:
 
-    ```bash
     python launch.py
-    ```
 
-    Inicie o bot:
+Inicie o bot:
     
-    ```bash
     node index.js
-    ```
 Agora Megan estará online no seu servidor Discord.
