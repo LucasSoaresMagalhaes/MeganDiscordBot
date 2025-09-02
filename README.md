@@ -1,4 +1,4 @@
-# Megan Bot — Discord + Ollama AI
+# Megan Bot — Discord + Ollama AI + Stable Difusion
 
 Megan é uma goth anime AI para Discord, criada para conversar de forma sarcástica, tímida e estilosa.  
 Ela usa Ollama para rodar modelos de linguagem localmente (como `llama2:13b`) e responde diretamente no Discord via slash command `/ask-megan`.  
