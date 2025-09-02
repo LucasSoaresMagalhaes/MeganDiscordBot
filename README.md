@@ -8,30 +8,15 @@ Além disso, pode gerar imagens com Stable Diffusion e brincar com comandos simp
 
 ## Funcionalidades
 
-<<<<<<< HEAD
 - Personalidade única: Megan é emo, tímida, sarcástica e fala em português com gírias.  
 - IA local: Usa [Ollama](https://ollama.ai/) para gerar respostas sem depender de serviços externos.  
 - Geração de imagens (Stable Diffusion): Crie imagens usando modelos de difusão.  
 - Ping Pong: Jogue com Megan para descontrair.  
 - Fácil de personalizar: Ajuste a personalidade ou adicione comandos customizados.  
-=======
--  **Personalidade única**: Megan é **emo, tímida, sarcástica** e fala em português com gírias.  
--  **IA local**: Usa [Ollama](https://ollama.ai/) para gerar respostas sem depender de serviços externos.  
--  **Slash commands**: Interaja com Megan usando `/ask-megan`.  
--  **Fácil de personalizar**: Ajuste a personalidade no código para criar sua própria persona.  
->>>>>>> d216fcc919668e86901a69312428b8647c33ec38
 
 ---
 
 ## Pré-requisitos
-<<<<<<< HEAD
-=======
-
-- [Node.js](https://nodejs.org/) 18+
-- [Discord Developer Portal](https://discord.com/developers/applications) para criar o bot e pegar o **TOKEN**
-- [Ollama](https://ollama.ai/) instalado e rodando localmente
-- Um modelo do Ollama, por exemplo:
->>>>>>> d216fcc919668e86901a69312428b8647c33ec38
 
 - [Node.js](https://nodejs.org/) 18+  
 - [Discord Developer Portal](https://discord.com/developers/applications) para criar o bot e pegar o TOKEN  
