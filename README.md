@@ -1,4 +1,4 @@
-# Megan Bot — Discord + Ollama AI
+# Megan Bot — Discord + Ollama AI + Stable Difusion
 
 Megan é uma goth anime AI para Discord, criada para conversar de forma sarcástica, tímida e estilosa.  
 Ela usa Ollama para rodar modelos de linguagem localmente (como `llama2:13b`) e responde diretamente no Discord via slash command `/ask-megan`.  
@@ -22,28 +22,27 @@ Além disso, pode gerar imagens com Stable Diffusion e brincar com comandos simp
 - [Discord Developer Portal](https://discord.com/developers/applications) para criar o bot e pegar o TOKEN  
 - [Ollama](https://ollama.ai/) instalado e rodando localmente  
 - Um modelo do Ollama (exemplo: `llama2:13b`):
-```bash
+```
 ollama pull llama2:13b
 ```
 
-Instalação
+## Instalação
 
-    Clone o repositório:
+- Clone o repositório:
 
-    ```bash
     git clone https://github.com/seu-usuario/megan-bot.git
     cd megan-bot
+    
+- Instale as dependências:
     ```
-
-    Instale as dependências:
-    ```bash
     npm install
     ```
-    Configuração
+    
+## Configuração
 
-    Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+ - Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
 
-    ```bash
+    ```
     DISCORD_TOKEN=SEU_TOKEN_DO_DISCORD
     CLIENT_ID=SEU_CLIENT_ID
     GUILD_ID=SEU_GUILD_ID
@@ -51,22 +50,21 @@ Instalação
     STABLE_DIFFUSION_URL=http://127.0.0.1:7860
     ```
 
-Como Rodar
+## Como Rodar
 
-    Inicie o servidor do Ollama:
-    ```bash
+ - Inicie o servidor do Ollama:
+    ```
     npm install
     ```
 
-    Inicie o Stable Diffusion:
-
-    ```bash
+ - Inicie o Stable Diffusion:
+    ```
     python launch.py
     ```
-
-    Inicie o bot:
     
-    ```bash
+ - Inicie o bot:
+    ```
     node index.js
     ```
-Agora Megan estará online no seu servidor Discord.
+    
+## Agora Megan estará online no seu servidor Discord.
