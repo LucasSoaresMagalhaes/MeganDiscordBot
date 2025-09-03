@@ -56,6 +56,9 @@ module.exports = {
 
     }
 
-
+    //TODO Criar bancpo de dados para salvar imagens favoritas
+    //TODO Adicionar opção de salvar imagem no banco de dados (Limitar para 5 imagens por usuário e usuários marcados)
+    //TODO Adicionar comando para ver imagens favoritas
+    //TODO Adicionar comando para remover imagem favorita
 
 }

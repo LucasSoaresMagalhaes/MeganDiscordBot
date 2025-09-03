@@ -44,6 +44,8 @@ async function enviarPromptOllama(prompt, model = "qwen2.5:14b-instruct") {
         console.error("Erro ao chamar API do Ollama:", error.response?.data || error.message);
         return null;
     }
+    //TODO Adicionar banco de dados para guardar perguntas e respostas
+    //TODO Adicionar contexto de conversa (últimas 5 perguntas e respostas)
 }
 
 module.exports = {
